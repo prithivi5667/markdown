@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0b0c10;
+  }
+  #preview {
+    border: 3px grey outset;
+    padding: 10px;
+    color: #c5c6c8;
+    font-size: 15px;
+  }
+  #editor {
+    border: 3px grey outset;
+    width: 98%;
+    background-color: transparent;
+    color: #c5c6c8;
+    font-size: 15px;
+    padding: 2px 7px;
+  }
+  #ehead {
+    text-align: center;
+    color: #66fcf1;
+  }
+  #phead {
+    text-align: center;
+    color: #66fcf1;
+  }
+  @media only screen and (min-width: 600px) {
+    .App {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 800px;
+    }
+    #pdiv {
+      width: 60%;
+    }
+    #preview{
+      height: 88.8%;
+    }
+    #editor {
+      width: 95%;
+      height: 90.8%;
+    }
+    #ehead {
+      /* text-align: left; */
+    }
+  }
+  

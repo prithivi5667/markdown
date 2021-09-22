@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./styles.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Editor from "./components/Editor";
+import Preview from "./components/Preview";
+
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ph2
+    };
+  }
+  handleChange = (e) => {
+    this.setState({ value: e.target.value });
+  };
+  render() {
+    return (
+      <div className="App">
+        <Editor handleChange={this.handleChange} value={this.state.value} />
+        <Preview value={this.state.value} />
+      </div>
+    );
+  }
 }
+const ph2 = `
+# This is header 1
 
-export default App;
+## This is header 2
+
+[Google](www.google.coom)
+
+\`<p>This a paragraph</p>\`
+
+\`\`\`JavaScript
+function add (a, b) {
+  return a + b;
+}
+\`\`\`
+
+- Item one
+- Item two
+- Item three
+  > This is a block quote
+
+![Markdown Logo](https://markdown-here.com/img/icon256.png)
+
+**This is a bolded text**
+
+`;
